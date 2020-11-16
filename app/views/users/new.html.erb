@@ -1,10 +1,12 @@
 	<!--main-section-->
-<main class="container">
+<main class="container mt-4">
   <!-- sign up form-->
-  <section class="signup-form bg-light">
-    <h4 class="text-center">
-      Create a new account
-    </h4>
-    <%= render "form" , user: @user %>
-  </section>
+  <div class="card w-50 m-auto">
+    <h3 class="card-header  amber accent-3 white-text text-center py-4">
+      <strong >Sign Up</strong>
+    </h3>
+    <div class="card-body px-lg-5">
+      <%= render "form" , user: @user %>
+    </div>
+  </div>
 </main>

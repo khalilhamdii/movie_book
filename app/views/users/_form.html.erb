@@ -1,4 +1,4 @@
-<%= form_for @user, :validate => true, :html => {:class => "form-input"} do |f| %>
+<%= form_for @user, :validate => true, :html => {:class => "text-center"} do |f| %>
   <ul>
     <% @user.errors.full_messages.each do |error| %>
       <li class="errors"><%= error %></li>
@@ -8,17 +8,14 @@
     <div class="labels">
       <label class="form-label">Name :</label>
     </div>
-    <div><%= f.text_field :name, :placeholder =>  'Please enter your name', :class => "inputbox" %></div>
+    <div><%= f.text_field :name, :placeholder =>  'Please enter your name', :class => "form-control" %></div>
   </div>
   <div class="input-field">
     <div class="labels">
       <label class="form-label">Email :</label>
     </div>
-    <div><%= f.email_field :email, :placeholder =>  'Please enter your email',:class => "inputbox" %></div>
-  </div>
-  <div>
-    <%= f.submit("Submit", :class => "btn btn-secondary btn-block mb-3") %>
-  </div>
-  <button type="button" onclick="location.href = 'login';" class="btn btn-success btn-block mb-3" >Login</button>
-  <button type="button" onclick="location.href = 'home';" class="btn btn-warning btn-block mb-3" >Home page</button>
-<% end %>
+    <div><%= f.email_field :email, :placeholder =>  'Please enter your email',:class => "form-control" %></div>
+    <%= f.submit "Submit", :class => "btn btn-block btn-brown mt-5" %>
+    <button type="button" onclick="location.href = 'login';" class="btn btn-amber btn-block  mb-3" >Login</button>
+    <button type="button" onclick="location.href = 'home';" class="btn btn-warning btn-block mb-3" >Home page</button>
+  <% end %>
