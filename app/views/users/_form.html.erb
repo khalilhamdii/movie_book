@@ -1,0 +1,24 @@
+<%= form_for @user, :validate => true, :html => {:class => "form-input"} do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li class="errors"><%= error %></li>
+    <% end %>
+  </ul>
+  <div class="input-field">
+    <div class="labels">
+      <label class="form-label">Name :</label>
+    </div>
+    <div><%= f.text_field :name, :placeholder =>  'Please enter your name', :class => "inputbox" %></div>
+  </div>
+  <div class="input-field">
+    <div class="labels">
+      <label class="form-label">Email :</label>
+    </div>
+    <div><%= f.email_field :email, :placeholder =>  'Please enter your email',:class => "inputbox" %></div>
+  </div>
+  <div>
+    <%= f.submit("Submit", :class => "btn btn-secondary btn-block mb-3") %>
+  </div>
+  <button type="button" onclick="location.href = 'login';" class="btn btn-success btn-block mb-3" >Login</button>
+  <button type="button" onclick="location.href = 'home';" class="btn btn-warning btn-block mb-3" >Home page</button>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h4>User profile</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= current_user.email %></td>
+        <td><%= link_to 'Edit', edit_user_path(current_user) %></td>
+        <td><%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <button onclick="location.href = 'show_events';" class="btn btn-sm btn-success mb-2" >Show events</button> <br>
+  <button onclick="location.href = '../';" class="btn btn-sm btn-success" >Home page</button>
+</div>

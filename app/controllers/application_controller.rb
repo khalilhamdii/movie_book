@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :require_login
+  # before_action :require_login
   helper_method :current_user
   helper_method :logged_in?
   def current_user
@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     else
       @current_user = nil
     end
+  end
+
+  def logged_in?
+    !current_user.nil?
   end
 
   private

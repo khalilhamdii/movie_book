@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login
+  # skip_before_action :require_login
 
   def index
+    redirect_to login_path unless logged_in?
   end
 
   def show

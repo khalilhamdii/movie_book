@@ -1,0 +1,21 @@
+	<!--main-section-->
+<main class="container">
+  <!-- sign up form-->
+  <section class="signup-form bg-light">
+    <h4 class="text-center">Login</h4>
+    <%= form_tag sessions_path, {:class => 'form-input'} do %>
+      <%= alert_error %>
+      <div class='input-field'>
+        <div class="labels">
+          <label>
+            Email : 
+          </label>
+        </div>
+        <%= text_field_tag(:email, '', class: 'inputbox', placeholder: 'Please enter your email' ) %>
+      </div>
+      <%= submit_tag 'Submit', :class => 'btn btn-success btn-block mb-3' %>
+      <button type="button" onclick="location.href = 'signup';" class="btn btn-secondary btn-block mb-3" >Sign Up</button>
+      <button type="button" onclick="location.href = 'home';" class="btn btn-warning btn-block mb-3" >Home page</button>
+    <% end %>
+  </section>
+</main>
