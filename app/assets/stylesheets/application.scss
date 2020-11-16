@@ -1,0 +1,33 @@
+/* signin */
+
+.signup-form {
+  width: 350px;
+  background-color: white;
+  margin: 100px auto 0 auto;
+  padding: 35px 20px 0 20px;
+  border: 1px solid #acacac;
+}
+
+/* Input fields */
+
+.input-field {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.inputbox {
+  width: 100%;
+  border: #c1c5c8 1px solid;
+  border-radius: 3px;
+  height: 34px;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+}
+
+/* Errors */
+
+.errors {
+  color: red;
+  text-align: left;
+}
