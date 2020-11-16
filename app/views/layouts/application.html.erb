@@ -23,28 +23,41 @@
     <!-- MDB core JavaScript -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script> -->
   </head>
-  <body class="brown darken-3">
+  <body class="brown darken-3 d-flex flex-column min-vh-100">
     <!--Navbar -->
-    <nav class="mb-1 navbar sticky-top navbar-expand-lg navbar-dark brown lighten-5 m-2 ">
+    <nav class="mb-1 navbar sticky-top navbar-expand-lg navbar-light brown lighten-5 m-2 ">
       <a class="navbar-brand brown-text font-weight-bold" href="#"><i class="fas fa-film mr-2"></i>MovieBook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle brown-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user brown-text"></i> Profile </a>
-            <%= nav_buttons %>
+        <ul class="navbar-nav mx-auto font-weight-bold">
+          <li class="nav-item">
+            <a class="nav-link deep-orange-text" href="#">HOME
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link brown-text" href="#">ARTICLES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link brown-text" href="#">CATEGORIES</a>
           </li>
         </ul>
+        <div class="nav-item rounded-pill amber darken-4">
+          <a class="nav-link text-white" href="#">Write an article</a>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle brown-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user brown-text"></i> Profile </a>
+          <%= nav_buttons %>
+        </div>
       </div>
     </nav>
     <%= yield %>
     <!-- Footer -->
-    <footer class="page-footer font-small brown darken-4 pt-4">
+    <footer class="page-footer font-small brown darken-4 pt-4 mt-auto">
       <!-- Footer Elements -->
       <div class="container">
         <!-- Social buttons -->
