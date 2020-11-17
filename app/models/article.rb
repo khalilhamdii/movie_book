@@ -6,6 +6,7 @@
     has_many :votes, dependent: :destroy
     has_many :art_cats, dependent: :destroy
     has_many :categories, through: :art_cats, dependent: :destroy
+    has_one_attached :image
 
     def category_list
       self.categories.collect do |category|

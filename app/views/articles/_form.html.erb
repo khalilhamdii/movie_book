@@ -4,5 +4,7 @@
   <%= f.input :title, label: "Article title :", placeholder: "Add title here..." %>
   <%= f.input :category_list, label: "Article categories :", placeholder: "Add categories here..." %>
   <%= f.input :description, label: "Article content :", placeholder: "Add content here..." %>
+  <%= f.label "Add an image to your article"%>
+  <%= f.file_field :image %> <br>
   <%= f.button :submit, class: "btn-success" %>
 <% end %>

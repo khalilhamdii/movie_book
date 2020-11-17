@@ -15,6 +15,11 @@
           <div class="text-success"><%= article.created_at %></div>
         </div>
         <div><%= article.description %></div>
+        <div>
+          <% if article.image.attached? %>
+            <img src="<%= (url_for(article.image))%>" class="w-100" >
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
