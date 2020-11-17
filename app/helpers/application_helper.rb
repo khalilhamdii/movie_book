@@ -1,7 +1,11 @@
 module ApplicationHelper
   def nav_buttons
+
     if logged_in?
-      content_tag(:i,"",class: 'fas fa-user brown-text') + 
+      avatar_link = content_tag :a, class: 'nav-link p-0' do
+        image_tag(current_user.avatar, alt: "avatar image", class: "rounded-circle z-depth-0 avatar-img")
+      end
+      content_tag(:div,avatar_link,class: 'nav-item') + 
         content_tag(:div, (link_to "#{current_user.name}", users_path, class: " brown-text font-weight-bold ml-2 mr-4"), class: 'nav-item') +
           content_tag(:div,(link_to "LOGOUT", logout_path, class: " brown-text font-weight-bold mr-5"), class: 'nav-item')
     else
@@ -16,3 +20,5 @@ module ApplicationHelper
     end
   end
 end
+
+
