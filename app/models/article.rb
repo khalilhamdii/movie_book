@@ -4,5 +4,6 @@
 
     belongs_to :author, class_name: 'User', foreign_key: :author_id
     has_many :votes, dependent: :destroy
-    has_many :categories
+    has_many :art_cats
+    has_many :categories, through: :art_cats
 end
