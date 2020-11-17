@@ -1,8 +1,7 @@
-<p id='notice'><%= notice %></p>
 <div class="container mt-5">
   <h1 class="text-success">List of articles</h1>
   <div class="results-column d-flex flex-column p-3">
-    <% @articles.each do |article| %>
+    <% @category.articles.each do |article| %>
       <div class="bg-light p-2 mb-2" >
         <div class="d-flex justify-content-between">
           <h4><%= link_to "#{article.title}", article, class: "text-secondary" %></h4>

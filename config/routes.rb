@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :home
   resources :articles
+  resources :categories
   resources :sessions, only: [:index, :new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

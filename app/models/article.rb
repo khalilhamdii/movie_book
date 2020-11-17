@@ -4,8 +4,8 @@
 
     belongs_to :author, class_name: 'User', foreign_key: :author_id
     has_many :votes, dependent: :destroy
-    has_many :art_cats
-    has_many :categories, through: :art_cats
+    has_many :art_cats, dependent: :destroy
+    has_many :categories, through: :art_cats, dependent: :destroy
 
     def category_list
       self.categories.collect do |category|
@@ -14,7 +14,7 @@
     end
 
     def category_list=(categories_string)
-      category_names = categories_string.split(",").collect{|s| s.strip.downcase}.uniq
+      category_names = categories_string.split(/[\s,\,]/).collect{|s| s.strip.downcase}.uniq
       new_or_found_categories = category_names.collect { |name| Category.find_or_create_by(name: name) }
       self.categories = new_or_found_categories
     end
