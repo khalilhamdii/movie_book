@@ -2,6 +2,7 @@
 <%= simple_form_for @article, :html => {:class => "mb-5 bg-light p-4"} do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, label: "Article title :", placeholder: "Add title here..." %>
+  <%= f.input :category_list, label: "Article categories :", placeholder: "Add categories here..." %>
   <%= f.input :description, label: "Article content :", placeholder: "Add content here..." %>
   <%= f.button :submit, class: "btn-success" %>
 <% end %>
