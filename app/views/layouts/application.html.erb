@@ -43,15 +43,8 @@
             <a class="nav-link brown-text" href="#">CATEGORIES</a>
           </li>
         </ul>
-        <div class="nav-item rounded-pill amber darken-4">
-          <%= link_to "Write an article", new_article_path, class: "nav-link text-white"%>
-        </div>
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle brown-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user brown-text"></i> Profile </a>
-          <%= nav_buttons %>
-        </div>
+        <%= new_article_btn %>
+        <%= nav_buttons %>
       </div>
     </nav>
     <%= yield %>

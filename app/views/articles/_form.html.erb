@@ -1,7 +1,7 @@
-<h3>Create a new article</h3>
+<h3 class="text-warning mb-5">Create a new article</h3>
 <%= simple_form_for @article, :html => {:class => "mb-5 bg-light p-4"} do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title, label: "Article title", placeholder: "Add title here..." %>
-  <%= f.input :description, label: "Article content", placeholder: "Add content here..." %>
+  <%= f.input :title, label: "Article title :", placeholder: "Add title here..." %>
+  <%= f.input :description, label: "Article content :", placeholder: "Add content here..." %>
   <%= f.button :submit, class: "btn-success" %>
 <% end %>
