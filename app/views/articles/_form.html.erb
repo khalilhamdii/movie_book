@@ -1,5 +1,5 @@
-<h3 class="text-warning mb-5">Create a new article</h3>
-<%= simple_form_for @article, :html => {:class => "mb-5 bg-light p-4"} do |f| %>
+<h3 class="text-warning mb-5 font-weight-bold">Create a new article</h3>
+<%= simple_form_for @article, :html => {:class => "mb-5 brown lighten-5 p-4"} do |f| %>
   <ul>
     <% @article.errors.full_messages.each do |error| %>
       <li class="errors"><%= error %></li>
@@ -11,5 +11,5 @@
   <%= f.input :description, label: "Article content :", placeholder: "Add content here..." %>
   <%= f.label "Add an image to your article"%>
   <%= f.file_field :image %> <br>
-  <%= f.button :submit, class: "btn-success" %>
+  <%= f.button :submit, class: "btn btn-block rounded-pill z-depth-1 mt-4 btn-amber" %>
 <% end %>

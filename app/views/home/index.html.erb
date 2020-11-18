@@ -1,3 +1,4 @@
+<%= notice_bar %>
 <div class="p-2">
   <div class="row no-gutters">
     <!-- Carousel wrapper -->
@@ -17,7 +18,7 @@
                   class="d-block w-100 carousel-img"
                   alt="..."
                 />
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption text-left ">
               <h5 class="deep-orange-text font-weight-bold"><%= @item.title %></h5>
               <p><%= @item.description %></p>
             </div>
@@ -30,7 +31,7 @@
                   class="d-block w-100 carousel-img"
                   alt="..."
                 />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption text-left">
                   <h5 class="deep-orange-text font-weight-bold"><%= article.title %></h5>
                   <p><%= article.description %></p>
                 </div>
@@ -58,11 +59,11 @@
   style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
           <!-- Content -->
           <!-- Card content -->
-          <div class="card-body text-white text-center h-100  weather-color py-5 px-4">
+          <div class="card-body deep-orange-text text-center h-100  rgba-black-strong py-5 px-4">
             <!-- Title -->
             <h4 class="card-title font-weight-bold">Tunisia</h4>
             <!-- Text -->
-            <p class="card-text"><%= Time.now %></p>
+            <p class="text-white"><%= @time.strftime("%d %B, %Y") %></p>
             <div class="d-flex justify-content-between">
               <p class="display-1 degree">23°</p>
               <i class="fas fa-sun-o fa-5x pt-3 deep-orange-text"></i>

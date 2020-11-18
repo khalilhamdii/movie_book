@@ -1,12 +1,20 @@
-<div class="container mt-5">
-  <h1 class="text-success">List of categories</h1>
-  <div class="results-column d-flex flex-column p-3">
+<%= notice_bar %>
+<div class="p-2">
+  <div class="row no-gutters flex-wrap">
     <% @categories.each do |category| %>
-      <div class="bg-light p-2 mb-2" >
-        <div class="d-flex justify-content-between">
-          <h4><%= link_to "#{category.name}", category, class: "text-secondary" %></h4>
+      <div class="card card-image col-3 bg-img"
+      <% if category.articles.first.image.attached? %>
+  style="background-image: url(<%= (url_for(category.articles.first.image))%>);">
+      <% end %>
+      <!-- Content -->
+      <div class="text-white text-center d-flex align-items-center justify-content-center h-100  rgba-black-strong py-5 px-4">
+        <div>
+          <h3><%= link_to "#{category.name.capitalize }", category, class: "deep-orange-text font-weight-bold" %></h3>
+          <h5 class="card-title pt-2"><strong><%= category.articles.first.title %></strong></h5>
+          <p><%= category.articles.first.description %></p>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
