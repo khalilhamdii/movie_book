@@ -13,128 +13,83 @@
         <!-- Single item -->
         <div class="carousel-item active">
           <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
+                  src="<%= (url_for(@item.image))%>"
+                  class="d-block w-100 carousel-img"
+                  alt="..."
+                />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h5 class="deep-orange-text font-weight-bold"><%= @item.title %></h5>
+              <p><%= @item.description %></p>
             </div>
           </div>
-          <!-- Single item -->
-          <div class="carousel-item">
-            <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
+          <% @articles.each do |article| %>
             <!-- Single item -->
             <div class="carousel-item">
               <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
+                  src="<%= (url_for(article.image))%>"
+                  class="d-block w-100 carousel-img"
+                  alt="..."
+                />
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <h5 class="deep-orange-text font-weight-bold"><%= article.title %></h5>
+                  <p><%= article.description %></p>
                 </div>
               </div>
-            </div>
-            <!-- Inner -->
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </a>
-            <a
-    class="carousel-control-next"
+            <% end %>
+          </div>
+          <!-- Inner -->
+          <!-- Controls -->
+          <a class="carousel-control-prev deep-orange-text font-weight-bold" href="#carouselBasicExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span>Previous</span>
+          </a>
+          <a
+    class="carousel-control-next deep-orange-text font-weight-bold"
     href="#carouselBasicExample"
     role="button"
     data-slide="next"
   >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </a>
-          </div>
-          <!-- Carousel wrapper -->
-          <div class="card card-image col-3"
-  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fas fa-chart-pie"></i> Marketing</h5>
-                <h3 class="card-title pt-2"><strong>This is the card title</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a>
-              </div>
-            </div>
-          </div>
+            <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            <span>Next</span>
+          </a>
         </div>
-        <div class="row no-gutters">
-          <div class="card card-image col"
+        <!-- Carousel wrapper -->
+        <div class="card card-image col-3"
   style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fas fa-chart-pie"></i> Marketing</h5>
-                <h3 class="card-title pt-2"><strong>This is the card title</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a>
-              </div>
+          <!-- Content -->
+          <!-- Card content -->
+          <div class="card-body text-white text-center h-100  weather-color py-5 px-4">
+            <!-- Title -->
+            <h4 class="card-title font-weight-bold">Tunisia</h4>
+            <!-- Text -->
+            <p class="card-text"><%= Time.now %></p>
+            <div class="d-flex justify-content-between">
+              <p class="display-1 degree">23°</p>
+              <i class="fas fa-sun-o fa-5x pt-3 deep-orange-text"></i>
             </div>
-          </div>
-          <div class="card card-image col"
-  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fas fa-chart-pie"></i> Marketing</h5>
-                <h3 class="card-title pt-2"><strong>This is the card title</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a>
-              </div>
-            </div>
-          </div>
-          <div class="card card-image col"
-  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fas fa-chart-pie"></i> Marketing</h5>
-                <h3 class="card-title pt-2"><strong>This is the card title</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a>
-              </div>
-            </div>
-          </div>
-          <div class="card card-image col"
-  style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fas fa-chart-pie"></i> Marketing</h5>
-                <h3 class="card-title pt-2"><strong>This is the card title</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a>
-              </div>
+            <div class="d-flex justify-content-between mb-4">
+              <p><i class="fas fa-tint fa-lg text-info pr-2"></i>3% Precipitation</p>
+              <p><i class="fas fa-leaf fa-lg grey-text pr-2"></i>21 km/h Winds</p>
             </div>
           </div>
         </div>
       </div>
+      <div class="row no-gutters flex-wrap">
+        <% @categories.each do |category| %>
+          <div class="card card-image col-3 bg-img"
+      <% if category.articles.first.image.attached? %>
+  style="background-image: url(<%= (url_for(category.articles.first.image))%>);">
+          <% end %>
+          <!-- Content -->
+          <div class="text-white text-center d-flex align-items-center justify-content-center h-100  rgba-black-strong py-5 px-4">
+            <div>
+              <h3 class="deep-orange-text font-weight-bold"> <%= category.name.capitalize %></h3>
+              <h5 class="card-title pt-2"><strong><%= category.articles.first.title %></strong></h5>
+              <p><%= category.articles.first.description %></p>
+              <%= link_to "View article", category.articles.first, class: "btn btn-deep-orange"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

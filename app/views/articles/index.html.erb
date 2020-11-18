@@ -1,26 +1,23 @@
 <p id='notice'><%= notice %></p>
-<div class="container mt-5">
-  <h1 class="text-success">List of articles</h1>
-  <div class="results-column d-flex flex-column p-3">
+<div class="p-2">
+  <div class="row no-gutters flex-wrap">
     <% @articles.each do |article| %>
-      <div class="bg-light p-2 mb-2" >
-        <div class="d-flex justify-content-between">
-          <h4><%= link_to "#{article.title}", article, class: "text-secondary" %></h4>
-          <p>
-            Categories:
-            <% article.categories.each do |category| %>
-              <%= link_to category.name, categories_path(category) %>
-            <% end %>
-          </p>
-          <div class="text-success"><%= article.created_at %></div>
-        </div>
-        <div><%= article.description %></div>
+      <div class="card card-image col-6 bg-img"
+      <% if article.image.attached? %>
+  style="background-image: url(<%= (url_for(article.image))%>);">
+      <% end %>
+      <!-- Content -->
+      <div class="text-white text-center d-flex align-items-center justify-content-center h-100  rgba-black-strong py-5 px-4">
         <div>
-          <% if article.image.attached? %>
-            <img src="<%= (url_for(article.image))%>" class="w-100" >
+          <% article.categories.each do |category| %>
+            <span><%= link_to category.name, categories_path(category), class: "pink-text" %></span>
           <% end %>
+          <h3 class="card-title pt-2"><strong><%= article.title %></strong></h3>
+          <p><%= article.description %></p>
+          <%= link_to "View article", article, class: "btn btn-pink"%>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
