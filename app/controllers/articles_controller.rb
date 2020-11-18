@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to articles_path, notice: 'Article was successfully created.' }
       else
-        format.html { render 'form' }
+        format.html { render :new }
       end
     end
   end
@@ -46,6 +46,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :description, :category_list, :image)
+    params.require(:article).permit(:title, :description, :image, :category_list)
   end
 end

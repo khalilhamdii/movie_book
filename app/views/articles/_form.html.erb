@@ -1,5 +1,10 @@
 <h3 class="text-warning mb-5">Create a new article</h3>
 <%= simple_form_for @article, :html => {:class => "mb-5 bg-light p-4"} do |f| %>
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li class="errors"><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.error_notification %>
   <%= f.input :title, label: "Article title :", placeholder: "Add title here..." %>
   <%= f.input :category_list, label: "Article categories :", placeholder: "Add categories here..." %>
