@@ -10,13 +10,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   background-image: -webkit-linear-gradient(330deg, #ff8800 0%, #ff744e 100%);
   background-image: linear-gradient(120deg, #ff6a41 0%, #ff8800 100%);
 }
@@ -64,4 +62,10 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+footer {
+  -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }

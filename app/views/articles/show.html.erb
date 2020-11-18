@@ -1,1 +1,25 @@
-
+<div class="container mt-5">
+  <div class="card card-image article ">  
+  <!-- <div class="background-pattern"></div> -->
+  <div class="d-flex flex-column h-100">
+  
+    <!-- Content -->
+    <div class="text-dark text-left d-flex flex-column p-3">
+      <div class="d-flex">
+        <% @article.categories.each do |category| %>
+          <%= link_to category.name.capitalize, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
+        <% end %>
+      </div>
+      <h4 class="card-title brown-text pt-2"><strong><%= @article.title %></strong></h4>
+      <p><%= @article.description %></p>
+      <div class="mt-auto d-flex justify-content-between ">
+        <%= number_of_votes(@article) %>
+        <%= vote_or_devote_btn(@article) %>
+      </div>
+    </div>
+      <% if @article.image.attached? %>
+      <%= image_tag(@article.image, alt: "article image", class: "w-100") %>
+    <% end %>
+  </div>
+</div>
+</div

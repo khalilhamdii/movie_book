@@ -1,6 +1,7 @@
   class Article < ApplicationRecord
   validates :title, presence: true, uniqueness: true, length: { minimum: 5 }
-  validates :description, presence: true, length: { minimum: 10 }
+  validates :description, presence: true, length: { maximum: 1000,
+    too_long: '1000 characters in post is the maximum allowed.' }
 
     belongs_to :author, class_name: 'User', foreign_key: :author_id
     has_many :votes, dependent: :destroy

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users
   resources :home
-  resources :articles
+  resources :articles, only: [:index, :create, :show] do
+    resources :votes, only: [:create, :destroy]
+  end
   resources :categories
   resources :sessions, only: [:index, :new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
