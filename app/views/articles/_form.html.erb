@@ -1,5 +1,5 @@
 <h3 class="text-warning mb-5 font-weight-bold">Create a new article</h3>
-<%= simple_form_for @article, :html => {:class => "mb-5 brown lighten-5 p-4"} do |f| %>
+<%= simple_form_for Article.new , :html => {:class => "mb-5 brown lighten-5 p-4"} do |f| %>
   <ul>
     <% @article.errors.full_messages.each do |error| %>
       <li class="errors"><%= error %></li>

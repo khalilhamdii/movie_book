@@ -2,43 +2,43 @@
   <div class="card card-image pb-5"> 
   <div class="d-flex flex-column h-100">
   
-    <!-- Content -->
-    <div class="text-dark text-left d-flex flex-column p-3 ">
-      <div class="d-flex">
-        <% @article.categories.each do |category| %>
-          <%= link_to category.name.capitalize, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
-        <% end %>
-      </div>
-      <h4 class="brown-text pt-2"><strong><%= @article.title %></strong></h4>
-      <div class="mb-4 font-weight-light brown-text">Created by 
-      <%= link_to @article.author.name, user_path(@article.author), class: 'amber-text' %>
-      <span><%= "#{time_ago_in_words(@article.created_at)} ago" %></span>.</div>
-      <p><%= @article.description %></p>
-    
-    </div>
-      <% if @article.image.attached? %>
-      <%= image_tag(@article.image, alt: "article image", class: "w-100") %>
-    <% end %>
-      <div class="mt-4 mx-4 d-flex justify-content-between ">
-        <%= number_of_votes(@article) %>
-        <%= vote_or_devote_btn(@article) %>
-      </div>
+      <!-- Content -->
+      <div class="text-dark text-left d-flex flex-column p-3 ">
+        <div class="d-flex">
+          <% @article.categories.each do |category| %>
+            <%= link_to category.name.capitalize, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
+          <% end %>
+        </div>
+        <h4 class="brown-text pt-2"><strong><%= @article.title %></strong></h4>
+        <div class="mb-4 font-weight-light brown-text">Created by 
+        <%= link_to @article.author.name, user_path(@article.author), class: 'amber-text' %>
+        <span><%= "#{time_ago_in_words(@article.created_at)} ago" %></span>.</div>
+        <p><%= @article.description %></p>
       
-  <div class="py-3 pl-3 mt-4 mx-4">
-    <%= form_for(@article.comments.new, url: article_comments_path(@article)) do |f| %>
-      <%= f.text_field :content, size: 30, id: :comment_content, class: 'brown lighten-5 shadow-sm comment-input mb-2 border-0 rounded-pill p-3 w-75', placeholder: 'Add new Comment' %>
-      <%= f.submit 'Comment', class: 'btn btn-amber rounded-pill ml-4' %>
-    <% end %>
-  </div>
-    <% @comments.each do |comment| %>
-  <div class="p-2 text-left brown lighten-5 py-3 pl-3 mb-3 mx-4 rounded">
-    <%= link_to comment.user.name, user_path(comment.user), class: 'font-weight-bold amber-text' %> <br>
-    <span class="font-weight-light"><%= "#{time_ago_in_words(comment.created_at)} ago" %></span>
-    <div>
-      <%= comment.content %>
+      </div>
+        <% if @article.image.attached? %>
+        <%= image_tag(@article.image, alt: "article image", class: "w-100") %>
+      <% end %>
+        <div class="mt-4 mx-4 d-flex justify-content-between ">
+          <%= number_of_votes(@article) %>
+          <%= vote_or_devote_btn(@article) %>
+        </div>
+        
+    <div class="py-3 pl-3 mt-4 mx-4">
+      <%= form_for(@article.comments.new, url: article_comments_path(@article)) do |f| %>
+        <%= f.text_field :content, size: 30, id: :comment_content, class: 'brown lighten-5 shadow-sm comment-input mb-2 border-0 rounded-pill p-3 w-75', placeholder: 'Add new Comment' %>
+        <%= f.submit 'Comment', class: 'btn btn-amber rounded-pill ml-4' %>
+      <% end %>
     </div>
-  </div>
-    <% end %>
-  </div>
+      <% @comments.each do |comment| %>
+    <div class="p-2 text-left brown lighten-5 py-3 pl-3 mb-3 mx-4 rounded">
+      <%= link_to comment.user.name, user_path(comment.user), class: 'font-weight-bold amber-text' %> <br>
+      <span class="font-weight-light"><%= "#{time_ago_in_words(comment.created_at)} ago" %></span>
+      <div>
+        <%= comment.content %>
+      </div>
+    </div>
+      <% end %>
+    </div>
 </div>
 </div

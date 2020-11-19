@@ -9,11 +9,10 @@ module ApplicationHelper
   def nav_buttons
 
     if logged_in?
-      avatar_link = content_tag :a, class: 'nav-link p-0' do
-        image_tag(current_user.avatar, alt: "avatar image", class: "rounded-circle z-depth-0 avatar-img")
-      end
-      content_tag(:div,avatar_link,class: 'nav-link') + 
-        content_tag(:div, (link_to "#{current_user.name.upcase}", users_path, class: " brown-text font-weight-bold"), class: 'nav-link') +
+      img = image_tag(current_user.avatar, alt: "avatar image", class: "rounded-circle z-depth-0 avatar-img")
+      content_tag(:div,(link_to img, current_user)) + 
+        content_tag(:div, (link_to "#{current_user.name.upcase}", current_user, class: " brown-text font-weight-bold"), class: 'nav-link') +
+        content_tag(:div, (link_to "SETTINGS", users_path, class: " brown-text font-weight-bold"), class: 'nav-link') +
           content_tag(:div,(link_to "LOGOUT", logout_path, class: " brown-text font-weight-bold"), class: 'nav-link')
     else
         content_tag(:div, (link_to "LOGIN", login_path, class: " brown-text font-weight-bold "), class: 'nav-link') +
@@ -23,7 +22,7 @@ module ApplicationHelper
 
   def new_article_btn
     if logged_in?
-        content_tag(:button,"Write an article", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1')
+        content_tag(:button,"Write an article", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3')
     end
   end
 
