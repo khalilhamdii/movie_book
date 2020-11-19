@@ -1,14 +1,13 @@
 <%= notice_bar %>
 <div class="p-2">
-  <h2 class="text-white text-center btn-amber p-2 ">Articles related to "<%= @category.name.capitalize %>"</h2>
+  <h2 class="text-white text-center btn-amber p-2 ">Articles related to "<%= @category.name %>"</h2>
   <div class="row no-gutters flex-wrap">
     <% @articles.each do |article| %>
       <div class="card card-image col-6 article ">
         <div class="background-pattern"></div>
         <div class="d-flex h-100">
-          <% if article.image.attached? %>
-            <%= image_tag(article.image, alt: "article image", class: "h-100 w-50") %>
-          <% end %>
+          <div class="card card-image bg-img w-50" 
+  style="background-image: url(<%= (url_for(article.image))%>);"></div>
           <!-- Content -->
           <div class="text-dark text-left d-flex flex-column w-50 p-3 high-z">
             <h4 class="card-title pt-2"><strong><%= link_to "#{article.title}", article, class: "brown-text" %></strong></h4>

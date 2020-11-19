@@ -8,8 +8,8 @@
         <!-- Content -->
         <div class="text-white text-left h-100  bg-gradient p-3">
           <div>
-            <h3><%= link_to "#{category.name.capitalize }", category, class: "text-white font-weight-bold yellow-border-bottom mb-5" %></h3>
-            <h5 class="card-title pt-2 mt-5 pt-5"><strong><%= article.title %></strong></h5>
+            <h3><%= link_to "#{category.name }", category, class: "text-white font-weight-bold yellow-border-bottom mb-5" %></h3>
+            <h5 class="card-title pt-2 mt-5 pt-5"><strong><%= link_to article.title, article, class: "text-white" %></strong></h5>
           </div>
         </div>
       </div>

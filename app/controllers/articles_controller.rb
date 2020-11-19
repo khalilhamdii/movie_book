@@ -22,8 +22,7 @@ class ArticlesController < ApplicationController
     @article = current_user.created_articles.build(article_params)
     image = params[:article][:image]
     mini_image = MiniMagick::Image.new(image.tempfile.path)
-    mini_image.resize '1200x1200'
-
+    mini_image.resize '1200x675'
     respond_to do |format|
       if @article.save
         format.html { redirect_to articles_path, notice: 'Article was successfully created.' }

@@ -52,7 +52,7 @@ module ApplicationHelper
   end
 
   def top_article(category)
-    top = Article.last
+    top = category.articles.last
     category.articles.each do |article|
       top = article if article.votes.count > top.votes.count
     end

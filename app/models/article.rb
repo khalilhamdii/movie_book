@@ -1,6 +1,6 @@
   class Article < ApplicationRecord
   validates :title, presence: true, uniqueness: true, length: { minimum: 5 }
-  validates :description, presence: true, length: { maximum: 1000,
+  validates :description, presence: true, length: { maximum: 10000,
     too_long: '1000 characters in post is the maximum allowed.' }
 
     belongs_to :author, class_name: 'User', foreign_key: :author_id
@@ -19,7 +19,7 @@
     end
 
     def category_list=(categories_string)
-      category_names = categories_string.split(/[\s,\,]/).collect{|s| s.strip.downcase.capitalize}.compact.uniq
+      category_names = categories_string.split(/\s\,|\,\s|\s|\,/).collect{|s| s.strip.downcase.capitalize}.uniq.compact
       new_or_found_categories = category_names.collect { |name| Category.find_or_create_by(name: name) }
       self.categories = new_or_found_categories
     end

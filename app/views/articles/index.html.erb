@@ -5,14 +5,13 @@
       <div class="card card-image col-6 article ">
         <div class="background-pattern"></div>
         <div class="d-flex h-100">
-          <% if article.image.attached? %>
-            <%= image_tag(article.image, alt: "article image", class: "h-100 w-50") %>
-          <% end %>
+          <div class="card card-image bg-img w-50" 
+  style="background-image: url(<%= (url_for(article.image))%>);"></div>
           <!-- Content -->
           <div class="text-dark text-left d-flex flex-column w-50 p-3 high-z">
             <div class="d-flex">
               <% article.categories.each do |category| %>
-                <%= link_to category.name.capitalize, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
+                <%= link_to category.name, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
               <% end %>
             </div>
             <h4 class="card-title pt-2"><strong><%= link_to "#{article.title}", article, class: "brown-text" %></strong></h4>
