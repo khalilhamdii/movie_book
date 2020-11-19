@@ -30,6 +30,15 @@
   background-size: cover;
 }
 
+.bg-gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(78, 67, 60, 0.5) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(78, 67, 60, 0.5) 100%
+  );
+}
+
 .carousel-img {
   height: 60vh;
 }
@@ -39,6 +48,10 @@
 }
 
 .thick-border-bottom {
+  border-bottom: 3px solid#f9e215;
+}
+
+.yellow-border-bottom {
   border-bottom: 3px solid#F9A315;
 }
 

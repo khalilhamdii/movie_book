@@ -2,18 +2,17 @@
 <div class="p-2">
   <div class="row no-gutters flex-wrap">
     <% @categories.each do |category| %>
+      <% article = top_article(category) %>
       <div class="card card-image col-3 bg-img"
-      <% if category.articles.first.image.attached? %>
-  style="background-image: url(<%= (url_for(category.articles.first.image))%>);">
-      <% end %>
-      <!-- Content -->
-      <div class="text-white text-center d-flex align-items-center justify-content-center h-100  rgba-black-strong py-5 px-4">
-        <div>
-          <h3><%= link_to "#{category.name.capitalize }", category, class: "deep-orange-text font-weight-bold" %></h3>
-          <h5 class="card-title pt-2"><strong><%= category.articles.first.title %></strong></h5>
+  style="background-image: url(<%= (url_for(article.image))%>);">
+        <!-- Content -->
+        <div class="text-white text-left h-100  bg-gradient p-3">
+          <div>
+            <h3><%= link_to "#{category.name.capitalize }", category, class: "text-white font-weight-bold yellow-border-bottom mb-5" %></h3>
+            <h5 class="card-title pt-2 mt-5 pt-5"><strong><%= article.title %></strong></h5>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

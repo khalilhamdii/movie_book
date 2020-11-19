@@ -9,7 +9,7 @@
     has_many :categories, through: :art_cats, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_one_attached :image, dependent: :destroy
-    validates :image, file_size: { less_than_or_equal_to: 2.megabytes },
+    validates :image, presence: true, file_size: { less_than_or_equal_to: 2.megabytes },
     file_content_type: { allow: ['image/jpeg', 'image/png'] }
 
     def category_list
@@ -19,7 +19,7 @@
     end
 
     def category_list=(categories_string)
-      category_names = categories_string.split(/[\s,\,]/).collect{|s| s.strip.downcase.capitalize}.uniq
+      category_names = categories_string.split(/[\s,\,]/).collect{|s| s.strip.downcase.capitalize}.compact.uniq
       new_or_found_categories = category_names.collect { |name| Category.find_or_create_by(name: name) }
       self.categories = new_or_found_categories
     end

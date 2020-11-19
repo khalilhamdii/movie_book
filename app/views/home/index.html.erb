@@ -15,12 +15,12 @@
         <div class="carousel-item active">
           <img
                   src="<%= (url_for(@item.image))%>"
-                  class="d-block w-100 carousel-img"
+                  class="d-block w-100 carousel-img bg-gradient"
                   alt="..."
                 />
             <div class="carousel-caption text-left ">
               <h5 class="deep-orange-text font-weight-bold"><%= @item.title %></h5>
-              <p><%= @item.description %></p>
+              <p class="art-content-summary"><%= @item.description %></p>
             </div>
           </div>
           <% @articles.each do |article| %>
@@ -33,7 +33,7 @@
                 />
                 <div class="carousel-caption text-left">
                   <h5 class="deep-orange-text font-weight-bold"><%= article.title %></h5>
-                  <p><%= article.description %></p>
+                  <p class="art-content-summary"><%= article.description %></p>
                 </div>
               </div>
             <% end %>
@@ -78,10 +78,10 @@
   style="background-image: url(<%= (url_for(category.articles.first.image))%>);">
           <% end %>
           <!-- Content -->
-          <div class="text-white text-center d-flex align-items-center justify-content-center h-100  rgba-black-strong py-5 px-4">
+          <div class="text-white text-left h-100  bg-gradient p-3">
             <div>
-              <h3 class="deep-orange-text font-weight-bold"> <%= category.name.capitalize %></h3>
-              <h5 class="card-title pt-2"><strong><%= category.articles.first.title %></strong></h5>
+              <h3><%= link_to "#{category.name.capitalize }", category, class: "text-white font-weight-bold yellow-border-bottom mb-5" %></h3>
+              <h5 class="card-title pt-2 mt-5 pt-5"><strong><%= category.articles.first.title %></strong></h5>
             </div>
           </div>
         </div>

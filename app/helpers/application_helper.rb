@@ -51,6 +51,14 @@ module ApplicationHelper
       content_tag(:span, "#{article.votes.count} votes", class: "mx-2 amber-text font-weight-bold")
     end
   end
+
+  def top_article(category)
+    top = Article.last
+    category.articles.each do |article|
+      top = article if article.votes.count > top.votes.count
+    end
+    top
+  end
 end
 
 
