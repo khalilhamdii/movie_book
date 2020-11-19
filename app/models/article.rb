@@ -8,6 +8,8 @@
     has_many :art_cats, dependent: :destroy
     has_many :categories, through: :art_cats, dependent: :destroy
     has_one_attached :image, dependent: :destroy
+    validates :image, file_size: { less_than_or_equal_to: 2.megabytes },
+    file_content_type: { allow: ['image/jpeg', 'image/png'] }
 
     def category_list
       self.categories.collect do |category|

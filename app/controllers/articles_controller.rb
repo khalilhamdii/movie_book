@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+  require 'mini_magick'
+
   def index
   @articles = Article.all.ordered_by_most_recent
   end
@@ -16,6 +19,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.created_articles.build(article_params)
+    image = params[:article][:image]
+    mini_image = MiniMagick::Image.new(image.tempfile.path)
+    mini_image.resize '1200x1200'
 
     respond_to do |format|
       if @article.save
