@@ -1,25 +1,21 @@
 <div class="container mt-5">
-  <h1 class="text-success">List of articles</h1>
-  <div class="results-column d-flex flex-column p-3">
-    <% @category.articles.each do |article| %>
-      <div class="bg-light p-2 mb-2" >
-        <div class="d-flex justify-content-between">
-          <h4><%= link_to "#{article.title}", article, class: "text-secondary" %></h4>
-          <p>
-            Categories:
-            <% article.categories.each do |category| %>
-              <%= link_to category.name, categories_path(category) %>
-            <% end %>
-          </p>
-          <div class="text-success"><%= article.created_at %></div>
+  <h2 class="text-white text-center btn-amber p-2 ">Articles related to "<%= @category.name.capitalize %>"</h2>
+  <% @category.articles.each do |article| %>
+    <div class="card card-image mb-4 ">
+      <div class="d-flex flex-column h-100">
+        <!-- Content -->
+        <div class="text-dark text-left d-flex flex-column p-3">
+          <h4 class="card-title brown-text pt-2"><strong><%= article.title %></strong></h4>
+          <p><%= article.description %></p>
+          <div class="mt-auto d-flex justify-content-between ">
+            <%= number_of_votes(article) %>
+            <%= vote_or_devote_btn(article) %>
+          </div>
         </div>
-        <div><%= article.description %></div>
-        <div>
-          <% if article.image.attached? %>
-            <img src="<%= (url_for(article.image))%>" class="w-100" >
-          <% end %>
-        </div>
+        <% if article.image.attached? %>
+          <%= image_tag(article.image, alt: "article image", class: "w-100") %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

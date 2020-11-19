@@ -12,22 +12,23 @@ module ApplicationHelper
       avatar_link = content_tag :a, class: 'nav-link p-0' do
         image_tag(current_user.avatar, alt: "avatar image", class: "rounded-circle z-depth-0 avatar-img")
       end
-      content_tag(:div,avatar_link,class: 'nav-item') + 
-        content_tag(:div, (link_to "#{current_user.name.upcase}", users_path, class: " brown-text font-weight-bold ml-2 mr-4"), class: 'nav-item') +
-          content_tag(:div,(link_to "LOGOUT", logout_path, class: " brown-text font-weight-bold mr-5"), class: 'nav-item')
+      content_tag(:div,avatar_link,class: 'nav-link') + 
+        content_tag(:div, (link_to "#{current_user.name.upcase}", users_path, class: " brown-text font-weight-bold"), class: 'nav-link') +
+          content_tag(:div,(link_to "LOGOUT", logout_path, class: " brown-text font-weight-bold"), class: 'nav-link')
     else
-        content_tag(:div, (link_to "LOGIN", login_path, class: " brown-text font-weight-bold mx-4"), class: 'nav-item') +
-          content_tag(:div, (link_to "SIGN UP", signup_path, class: " brown-text font-weight-bold mr-5"), class: 'nav-item')
+        content_tag(:div, (link_to "LOGIN", login_path, class: " brown-text font-weight-bold "), class: 'nav-link') +
+          content_tag(:div, (link_to "SIGN UP", signup_path, class: " brown-text font-weight-bold"), class: 'nav-link')
     end
   end
 
   def new_article_btn
     if logged_in?
-        content_tag(:button,"Write an article", onclick: "location.href = '../articles/new';", class: 'nav-item rounded-pill btn btn-amber z-depth-1 mr-4')
+        content_tag(:button,"Write an article", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1')
     end
   end
 
   def vote_or_devote_btn(article)
+    if logged_in?
     vote = Vote.find_by(article: article, user: current_user)
     if vote
       down = content_tag(:i, "", class: "fas fa-arrow-circle-up fa-2x amber-text")
@@ -38,6 +39,7 @@ module ApplicationHelper
       link_to(up, article_votes_path(article_id: article.id), method: :post, class: "amber-text font-weight-bold")
       
     end
+  end
   end
 
   def number_of_votes(article)
