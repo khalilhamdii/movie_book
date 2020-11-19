@@ -92,3 +92,8 @@ footer {
   text-overflow: ellipsis;
   max-height: 100px;
 }
+
+.dropdown-scroll {
+  height: 300px;
+  overflow-y: scroll;
+}

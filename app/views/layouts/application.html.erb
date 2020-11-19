@@ -26,7 +26,7 @@
   <body class="background-color d-flex flex-column min-vh-100">
     <!--Navbar -->
     <nav class="mb-1 navbar sticky-top navbar-expand-lg navbar-light brown lighten-5 m-2 ">
-      <a class="navbar-brand brown-text font-weight-bold" href="<%= root_path %>"><i class="fas fa-film mr-2"></i>MovieBook</a>
+      <a class="navbar-brand brown-text font-weight-bold" href="<%= root_path %>"><i class="fas fa-film mr-2 deep-orange-text"></i>MovieBook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,8 +39,14 @@
           <li class="nav-item">
             <%= link_to "ARTICLES", articles_path, class: "nav-link brown-text"%>
           </li>
-          <li class="nav-item">
-            <%= link_to "CATEGORIES", categories_path, class: "nav-link brown-text"%>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle brown-text" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">CATEGORIES</a>
+            <div class="dropdown-menu dropdown-primary dropdown-scroll" aria-labelledby="navbarDropdownMenuLink">
+              <% Category.all.each do |category| %>
+                <%= link_to category.name, category, class: "dropdown-item"%>
+              <% end %>
+            </div>
           </li>
         </ul>
         <%= new_article_btn %>
@@ -51,34 +57,30 @@
     <!-- Footer -->
     <footer class="page-footer font-small pt-4 mt-auto">
       <!-- Footer Elements -->
-      <div class="container">
+      <div class="d-flex justify-content-between align-items-center px-4">
         <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center deep-orange-text">
+        <a class="navbar-brand text-white font-weight-bold mb-2" href="<%= root_path %>"><i class="fas fa-film mr-2 deep-orange-text"></i>MovieBook</a>
+        <ul class="list-unstyled list-inline text-center">
           <li class="list-inline-item text-white">
             Connect with us :
           </li>
           <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1">
+            <a class="btn-floating btn-fb mx-1 deep-orange-text" href="https://www.facebook.com/khalil.haamdi/">
               <i class="fab fa-facebook-f fa-lg"> </i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1">
+            <a class="btn-floating btn-tw mx-1 deep-orange-text" href="https://twitter.com/Khalilhamdiii">
               <i class="fab fa-twitter fa-lg"> </i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="btn-floating btn-gplus mx-1">
-              <i class="fab fa-google-plus-g fa-lg"> </i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1">
+            <a class="btn-floating btn-li mx-1 deep-orange-text" href="https://www.linkedin.com/in/khalilhamdi">
               <i class="fab fa-linkedin-in fa-lg"> </i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="btn-floating btn-dribbble mx-1">
+            <a class="btn-floating btn-dribbble mx-1 deep-orange-text" href="https://github.com/khalilhamdii">
               <i class="fab fa-dribbble fa-lg"> </i>
             </a>
           </li>
@@ -87,7 +89,7 @@
       </div>
       <!-- Footer Elements -->
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <div class="footer-copyright text-center py-3">© 2020 Copyright. All rights reserved. Source code here :
         <a href="https://github.com/khalilhamdii/movie_book" class="deep-orange-text"> Github</a>
       </div>
       <!-- Copyright -->
