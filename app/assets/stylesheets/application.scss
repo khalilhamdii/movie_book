@@ -75,5 +75,7 @@ footer {
 }
 
 .art-content-summary {
-  max-height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 100px;
 }

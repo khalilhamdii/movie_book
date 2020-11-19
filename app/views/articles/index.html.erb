@@ -16,7 +16,7 @@
               <% end %>
             </div>
             <h4 class="card-title pt-2"><strong><%= link_to "#{article.title}", article, class: "brown-text" %></strong></h4>
-            <p class="d-inline-block text-truncate art-content-summary"><%= article.description %></p>
+            <p class="d-inline-block art-content-summary"><%= article.description %></p>
             <%= link_to "Read More", article, class: "custom-orange-text  font-weight-bold"%>
             <div class="mt-auto ">
               <%= number_of_votes(article) %>

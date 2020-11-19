@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h2 class="text-white text-center btn-amber p-2 ">Articles related to "<%= @category.name.capitalize %>"</h2>
-  <% @category.articles.each do |article| %>
+  <% @category.articles.ordered_by_most_recent.each do |article| %>
     <div class="card card-image mb-4 ">
       <div class="d-flex flex-column h-100">
         <!-- Content -->

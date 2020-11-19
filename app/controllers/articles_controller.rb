@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-  @articles = Article.all
+  @articles = Article.all.ordered_by_most_recent
   end
 
   def show
