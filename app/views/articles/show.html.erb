@@ -4,10 +4,13 @@
   
       <!-- Content -->
       <div class="text-dark text-left d-flex flex-column p-3 ">
+      <div class="d-flex justify-content-between">
         <div class="d-flex">
           <% @article.categories.each do |category| %>
             <%= link_to category.name, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
           <% end %>
+        </div>
+        <%=  link_to content_tag(:i,"", class: "fas fa-arrow-left mr-3")+"Back", articles_path, class: "amber-text" %>
         </div>
         <h4 class="brown-text pt-2"><strong><%= @article.title %></strong></h4>
         <div class="mb-4 font-weight-light brown-text">Created by 
