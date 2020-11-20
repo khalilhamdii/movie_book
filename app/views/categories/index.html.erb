@@ -1,16 +1,6 @@
 <%= notice_bar %>
 <div class="p-2">
-  <div class="no-gutters mb-4">
-    <% featured = featured_article %>
-    <div class="bg-img"
-  style="background-image: url(<%= (url_for(featured.image))%>);">
-      <!-- Content -->
-      <div class="text-white text-left h-100  bg-gradient p-3 featured d-flex flex-column">
-        <h3 class="amber-text font-weight-bold yellow-border-bottom">Featured movie</h3>
-        <h5 class="card-title mt-auto"><strong><%= link_to featured.title, featured, class: "text-white" %></strong></h5>
-      </div>
-    </div>
-  </div>
+  <%= featured_article %>
   <div class="row no-gutters flex-wrap">
     <% @categories.each do |category| %>
       <% article = top_article(category) %>

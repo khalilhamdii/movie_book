@@ -70,7 +70,11 @@ module ApplicationHelper
     Article.all.each do |article|
       featured = article if article.votes.count > featured.votes.count
     end
-    featured
+    if featured 
+      if featured.image.attached?
+        render 'categories/featured_art', featured: featured
+      end
+    end
   end
 end
 
