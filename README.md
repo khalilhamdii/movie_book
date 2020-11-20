@@ -2,6 +2,10 @@
 
 ![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 
+## Description
+
+> MovieBook is a movies blog where users can write reviews or summaries about their favorite movies. This web applications allows users to sign up using name, email and an avatar. Every logged in user can create a new article. He has the ability to either vote or comment other users articles.
+
 ## Library Directory 📙
 
 | Contents                    |
@@ -13,10 +17,6 @@
 | [Testing](#testing-⚙️)      |
 | [Authors](#authors)         |
 | [License](#license)         |
-
-## Description
-
-> MovieBook is a movies blog where users can write reviews or summaries about their favorite movies. This web applications allows users to sign up using name, email and an avatar. Every logged in user can create a new article. He has the ability to either vote or comment other users articles.
 
 ## Live Demo
 
