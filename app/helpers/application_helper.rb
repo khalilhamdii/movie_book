@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def notice_bar
     if notice
-      content_tag(:div, notice, class: 'amber darken-4 text-white text-center rounded-pill font-weight-bold p-2 m-2')
+      content_tag(:div, notice, class: 'amber text-white text-center rounded-pill font-weight-bold p-2 m-2')
     end
   end
 
@@ -23,6 +23,12 @@ module ApplicationHelper
   def new_article_btn
     if logged_in?
         content_tag(:button,"Write a summary", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3')
+    end
+  end
+
+  def new_comment
+    if logged_in?
+      render 'comments/comment'
     end
   end
 
@@ -57,6 +63,14 @@ module ApplicationHelper
       top = article if article.votes.count > top.votes.count
     end
     top
+  end
+
+  def featured_article
+    featured = Article.last
+    Article.all.each do |article|
+      featured = article if article.votes.count > featured.votes.count
+    end
+    featured
   end
 end
 
