@@ -6,10 +6,10 @@
     <% end %>
   </ul>
   <%= f.error_notification %>
-  <%= f.input :title, label: "Article title :", placeholder: "Add title here..." %>
-  <%= f.input :category_list, label: "Article categories :", placeholder: "Add categories here..." %>
-  <%= f.input :description, label: "Article content :", placeholder: "Add content here..." %>
-  <%= f.label "Add an image to your article"%>
+  <%= f.input :title, label: "Movie title :", placeholder: "Add title here..." %>
+  <%= f.input :category_list, label: "Movie categories :", placeholder: "Add categories here..." %>
+  <%= f.input :description, label: "Movie summary :", placeholder: "Add summary here..." %>
+  <%= f.label "Add an image to your summary"%>
   <%= f.file_field :image %> <br>
   <%= f.button :submit, class: "btn btn-block rounded-pill z-depth-1 mt-4 btn-amber" %>
 <% end %>

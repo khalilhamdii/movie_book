@@ -22,7 +22,7 @@ module ApplicationHelper
 
   def new_article_btn
     if logged_in?
-        content_tag(:button,"Write an article", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3')
+        content_tag(:button,"Write a summary", onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3')
     end
   end
 
