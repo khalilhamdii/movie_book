@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @articles = @user.created_articles.ordered_by_most_recent
+    @articles = @user.created_articles.ordered_by_most_recent.includes(:votes,:comments)
   end
 
   def new
