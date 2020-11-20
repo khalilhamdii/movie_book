@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
-  validates :avatar, file_size: { less_than_or_equal_to: 2.megabytes },
+  validates :avatar, attached: true, file_size: { less_than_or_equal_to: 2.megabytes },
     file_content_type: { allow: ['image/jpeg', 'image/png'] }
 
 end
