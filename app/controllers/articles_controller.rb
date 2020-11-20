@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   require 'mini_magick'
 
   def index
-  @articles = Article.all.ordered_by_most_recent
+  @articles = Article.all.ordered_by_most_recent.includes(:votes)
   end
 
   def show
