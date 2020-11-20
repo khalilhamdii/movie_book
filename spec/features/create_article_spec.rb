@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "CreateArticles", type: :feature do
+RSpec.feature 'CreateArticles', type: :feature do
   scenario 'can sign up' do
     visit '/signup'
     fill_in :user_name, with: 'Khalil hamdi'

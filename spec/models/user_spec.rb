@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     should have_many(:votes)
   end
 
-  it 'checks if avatar is attached' do 
-    is_expected.to validate_attached_of(:avatar) 
+  it 'checks if avatar is attached' do
+    is_expected.to validate_attached_of(:avatar)
   end
 end

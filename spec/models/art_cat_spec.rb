@@ -1,3 +1,4 @@
+# rubocop:disable Layout/EndOfLine
 require 'rails_helper'
 
 RSpec.describe ArtCat, type: :model do
@@ -9,3 +10,5 @@ RSpec.describe ArtCat, type: :model do
     should belong_to(:article)
   end
 end
+
+# rubocop:enable Layout/EndOfLine

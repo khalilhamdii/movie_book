@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  def index 
+  def index
     @categories = Category.all.includes(:articles)
   end
 
@@ -7,5 +7,4 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @articles = @category.articles.includes(:votes)
   end
-  
 end

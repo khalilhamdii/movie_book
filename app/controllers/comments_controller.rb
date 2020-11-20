@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @comment.article , notice: 'Comment was successfully created.'
+      redirect_to @comment.article, notice: 'Comment was successfully created.'
     else
-      redirect_to @comment.article , notice: @comment.errors.full_messages.join('. ').to_s
+      redirect_to @comment.article, notice: @comment.errors.full_messages.join('. ').to_s
     end
   end
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Logins", type: :feature do
+RSpec.feature 'Logins', type: :feature do
   scenario 'A user can login' do
     visit '/signup'
     fill_in :user_name, with: 'Khalil hamdi'

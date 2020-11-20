@@ -9,8 +9,8 @@ RSpec.describe Article, type: :model do
     should validate_presence_of(:description)
   end
 
-  it 'checks if article image is attached' do 
-    is_expected.to validate_attached_of(:image) 
+  it 'checks if article image is attached' do
+    is_expected.to validate_attached_of(:image)
   end
 
   it 'checks if has many votes' do
@@ -24,6 +24,4 @@ RSpec.describe Article, type: :model do
   it 'checks if has many categories' do
     should have_many(:categories)
   end
-
-  
 end
