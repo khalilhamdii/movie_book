@@ -2,6 +2,7 @@
   validates :title, presence: true, uniqueness: true, length: { minimum: 5 }
   validates :description, presence: true, length: { maximum: 10000,
     too_long: '1000 characters in post is the maximum allowed.' }
+  validates :category_list, presence: true
 
     belongs_to :author, class_name: 'User', foreign_key: :author_id
     has_many :votes, dependent: :destroy
