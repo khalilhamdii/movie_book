@@ -79,7 +79,7 @@
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DcRonan/ruby-slack-bot/issues).
+Feel free to check the [issues page](https://github.com/khalilhamdii/movie_book/issues).
 
 ### Show your support
 
