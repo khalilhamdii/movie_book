@@ -19,9 +19,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        avatar = params[:user][:avatar]
-        mini_image = MiniMagick::Image.new(avatar.tempfile.path)
-        mini_image.resize '256x256'
         session[:user_id] = @user.id
         format.html { redirect_to root_path, notice: 'User was successfully created.' }
       else

@@ -6,6 +6,8 @@
 
 | Contents                    |
 | --------------------------- |
+| [Live Demo](#live-demo)     |
+| [Screenshots](#screenshots) |
 | [Built With](#built-with-🛠) |
 | [Install](#install-⏳)      |
 | [Testing](#testing-⚙️)      |
@@ -14,17 +16,30 @@
 
 ## Description
 
-> The aim of the project was to create a social media app that you can create friendships, posts, comments and likes.
+> MovieBook is a movies blog where users can write reviews or summaries about their favorite movies. This web applications allows users to sign up using name, email and an avatar. Every logged in user can create a new article. He has the ability to either vote or comment other users articles.
+
+## Live Demo
+
+[Heroku link](https://pacific-taiga-39421.herokuapp.com/)
+
+## Screenshots
 
 ![img](./app/assets/images/main-sc.png)
+
 ![img](./app/assets/images/main-sc-1.png)
+
 ![img](./app/assets/images/main-sc-2.png)
+
+![img](./app/assets/images/main-sc-3.png)
 
 ## Built With 🛠
 
 ```
 - Ruby 2.6.3
 - Ruby on Rails 5.2.4.4
+- MDBoostrap
+- Simple forms
+- Mini Magick
 - VS Code
 ```
 
@@ -34,8 +49,8 @@
 
 1. - [ ] Open your `Terminal`
 2. - [ ] Navigate to the directory where you will like to install the repo by running `cd FOLDER-NAME`
-3. - [ ] Run `git clone git@github.com:DcRonan/ror-social-scaffold.git` to download <b>or</b> you can download using `HTTPS` by running `git clone https://github.com/DcRonan/ror-social-scaffold.git` in the terminal
-4. - [ ] Run `cd ror-social-scaffold` to enter directory
+3. - [ ] Run `git clone git@github.com:khalilhamdii/movie_book.git` to download <b>or</b> you can download using `HTTPS` by running `git clone https://github.com/khalilhamdii/movie_book.git` in the terminal
+4. - [ ] Run `cd movie_book` to enter directory
 5. - [ ] Run `bundle install` to install Ruby Gems (<b>hint:</b> Mac users, if not working then run `sudo bundle install`)
 6. - [ ] Run `rails db:create` to create a local database
 7. - [ ] Run `rails db:migrate` to migrate the database
@@ -46,7 +61,7 @@
 > I have used [rspec](https://rspec.info/) testing tool to test the code by creating many test cases. Please follow below to test my code
 
 1. - [ ] Open `Terminal` again
-2. - [ ] Run `cd ror-social-scaffold` to enter directory
+2. - [ ] Run `cd movie_book` to enter directory
 3. - [ ] Run `rspec` to start testing
 4. - [ ] All tests will pass ✅
 
@@ -61,7 +76,7 @@
 
 ### Acknowledgments 🌟
 
-[Microverse](https://www.microverse.org/)
+[Microverse](https://github.com/microverseinc/ror-social-scaffold)
 
 ### 🤝 Contributing
 
