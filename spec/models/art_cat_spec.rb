@@ -1,4 +1,4 @@
-# rubocop:disable Layout/EndOfLine
+# rubocop:disable Layout/EndOfLine, Lint/RedundantCopDisableDirective
 require 'rails_helper'
 
 RSpec.describe ArtCat, type: :model do
@@ -11,4 +11,4 @@ RSpec.describe ArtCat, type: :model do
   end
 end
 
-# rubocop:enable Layout/EndOfLine
+# rubocop:enable Layout/EndOfLine, Lint/RedundantCopDisableDirective
