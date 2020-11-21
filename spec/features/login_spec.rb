@@ -14,4 +14,11 @@ RSpec.feature 'Logins', type: :feature do
     click_on 'Submit'
     expect(page).to have_content 'Logged in!'
   end
+
+  scenario 'A non signed in user can not login' do
+    visit '/login'
+    fill_in :email, with: 'some_email@mail.com'
+    click_on 'Submit'
+    expect(page).to have_content 'Email is invalid'
+  end
 end

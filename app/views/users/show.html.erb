@@ -17,9 +17,7 @@
       <p><%= article.description %></p>
     
     </div>
-      <% if article.image.attached? %>
       <%= image_tag(article.image, alt: "article image", class: "w-100") %>
-    <% end %>
       <div class="mt-4 mx-4 d-flex justify-content-between ">
         <%= number_of_votes(article) %>
         <%= vote_or_devote_btn(article) %>
