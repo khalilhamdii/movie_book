@@ -18,8 +18,7 @@ module ApplicationHelper
   end
 
   def new_article_btn
-    logged_in?
-    content_tag(:button, 'Write a summary', onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3') unless logged_in?
+    content_tag(:button, 'Write a summary', onclick: "location.href = '../articles/new';", class: 'nav-link rounded-pill btn btn-amber z-depth-1 mr-3') if logged_in?
   end
 
   def new_comment

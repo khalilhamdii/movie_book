@@ -49,9 +49,10 @@
 3. - [ ] Run `git clone git@github.com:khalilhamdii/movie_book.git` to download <b>or</b> you can download using `HTTPS` by running `git clone https://github.com/khalilhamdii/movie_book.git` in the terminal
 4. - [ ] Run `cd movie_book` to enter directory
 5. - [ ] Run `bundle install` to install Ruby Gems (<b>hint:</b> Mac users, if not working then run `sudo bundle install`)
-6. - [ ] Run `rails db:create` to create a local database
-7. - [ ] Run `rails db:migrate` to migrate the database
-8. - [ ] Run `http://localhost:3000/` in your browser to start the application
+6. - [ ] Before moving to the next step, open this file `config/dabase.yml` and make sure username and password match your local server username and password (they are set to default in this application).
+7. - [ ] Run `rails db:create` to create a local database
+8. - [ ] Run `rails db:migrate` to migrate the database
+9. - [ ] Run `http://localhost:3000/` in your browser to start the application
 
 ## Testing ⚙️
 
@@ -59,8 +60,9 @@
 
 1. - [ ] Open `Terminal` again
 2. - [ ] Run `cd movie_book` to enter directory
-3. - [ ] Run `rspec` to start testing
-4. - [ ] All tests will pass ✅
+3. - [ ] Run `rails db:migrate RAILS_ENV=test` to migrate testing database
+4. - [ ] Run `rspec` to start testing
+5. - [ ] All tests will pass ✅
 
 ## Authors
 
