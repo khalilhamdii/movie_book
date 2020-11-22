@@ -10,7 +10,8 @@ RSpec.feature 'CreateArticles', type: :feature do
     click_on 'Submit'
     visit '/articles/new'
     fill_in :article_title, with: 'Batman'
-    fill_in :article_category_list, with: 'Action, Drama'
+    select 'Action', from: 'article_category_list'
+    select 'Action', from: 'article_category_list'
     fill_in :article_description, with: 'Some summary for batman movie'
     attach_file(:article_image, File.absolute_path('./spec/images/batman.jpeg'))
     click_on 'Create Article'
@@ -25,7 +26,8 @@ RSpec.feature 'CreateArticles', type: :feature do
     click_on 'Submit'
     visit '/articles/new'
     fill_in :article_title, with: 'Batman'
-    fill_in :article_category_list, with: 'Action, Drama'
+    select 'Action', from: 'article_category_list'
+    select 'Action', from: 'article_category_list'
     fill_in :article_description, with: 'Some summary for batman movie'
     click_on 'Create Article'
     expect(page).to have_content "Image can't be blank"
@@ -39,7 +41,6 @@ RSpec.feature 'CreateArticles', type: :feature do
     click_on 'Submit'
     visit '/articles/new'
     fill_in :article_title, with: 'Batman'
-    fill_in :article_category_list, with: ''
     fill_in :article_description, with: 'Some summary for batman movie'
     attach_file(:article_image, File.absolute_path('./spec/images/batman.jpeg'))
     click_on 'Create Article'
