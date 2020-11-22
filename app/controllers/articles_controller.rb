@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def index
     @articles = Article.all.ordered_by_most_recent.includes(:votes)
   end
@@ -47,6 +46,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :description, :image, :category_list => [])
+    params.require(:article).permit(:title, :description, :image, category_list: [])
   end
 end

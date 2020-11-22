@@ -1,3 +1,4 @@
+# rubocop:disable Layout/EndOfLine
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
@@ -9,3 +10,5 @@ RSpec.describe Category, type: :model do
     should have_many(:art_cats)
   end
 end
+
+# rubocop:enable Layout/EndOfLine

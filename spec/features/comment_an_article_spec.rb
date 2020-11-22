@@ -1,6 +1,7 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
-RSpec.feature "CommentAnArticles", type: :feature do
+RSpec.feature 'CommentAnArticles', type: :feature do
   scenario 'A logged in usr can add a comment to an article' do
     visit '/signup'
     fill_in :user_name, with: 'Khalil hamdi'
@@ -38,3 +39,5 @@ RSpec.feature "CommentAnArticles", type: :feature do
     expect(page).not_to have_button 'Comment'
   end
 end
+
+# rubocop:enable Metrics/BlockLength

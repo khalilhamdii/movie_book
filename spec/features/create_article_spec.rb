@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
 RSpec.feature 'CreateArticles', type: :feature do
@@ -45,3 +46,5 @@ RSpec.feature 'CreateArticles', type: :feature do
     expect(page).to have_content "Category list can't be blank"
   end
 end
+
+# rubocop:enable Metrics/BlockLength
