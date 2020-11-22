@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'mini_magick'
 
 RSpec.feature 'SignUps', type: :feature do
   scenario 'A user can sign up' do

@@ -17,9 +17,8 @@ class Article < ApplicationRecord
     categories.collect(&:name).join(', ')
   end
 
-  def category_list=(categories_string)
-    category_names = categories_string.split(/\s,|,\s|\s|,/).collect { |s| s.strip.downcase.capitalize }.uniq.compact
-    new_or_found_categories = category_names.collect { |name| Category.find_or_create_by(name: name) }
+  def category_list=(category_names)
+    new_or_found_categories = category_names.compact.collect { |name| Category.find_or_create_by(name: name) }
     self.categories = new_or_found_categories
   end
 end
