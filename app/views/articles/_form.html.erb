@@ -10,6 +10,6 @@
   <%= f.input :category_list, label: "Movie categories :", placeholder: "Add categories here separated by a space or a comma..." %>
   <%= f.input :description, label: "Movie summary :", placeholder: "Add summary here..." %>
   <%= f.label "Add an image to your summary"%>
-  <%= f.file_field :image %> <br>
+  <%= f.file_field :image, direct_upload: true %> <br>
   <%= f.button :submit, class: "btn btn-block rounded-pill z-depth-1 mt-4 btn-amber" %>
 <% end %>

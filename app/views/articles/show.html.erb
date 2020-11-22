@@ -20,7 +20,7 @@
         <p><%= @article.description %></p>
       
       </div>
-        <%= image_tag(@article.image, alt: "article image", class: "w-100") %>
+        <%= image_tag(url_for(@article.image), alt: "article image", class: "w-100") %>
         <div class="mt-4 mx-4 d-flex justify-content-between ">
           <%= number_of_votes(@article) %>
           <%= vote_or_devote_btn(@article) %>

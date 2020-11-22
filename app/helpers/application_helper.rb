@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def nav_buttons
     if logged_in?
-      img = image_tag(current_user.avatar, alt: 'avatar image', class: 'rounded-circle z-depth-0 avatar-img d-none d-lg-block d-xl-block')
+      img = image_tag(url_for(current_user.avatar), alt: 'avatar image', class: 'rounded-circle z-depth-0 avatar-img d-none d-lg-block d-xl-block')
       content_tag(:div, (link_to img, current_user)) +
         content_tag(:div, (link_to current_user.name.upcase.to_s, current_user, class: ' brown-text font-weight-bold'), class: 'nav-link') +
         content_tag(:div, (link_to 'SETTINGS', users_path, class: ' brown-text font-weight-bold'), class: 'nav-link') +
