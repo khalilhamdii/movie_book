@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'active_storage_validations', '~> 0.9.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'file_validators'
-gem 'mini_magick'
 gem 'simple_form'
 gem 'cloudinary'
 group :development, :test do

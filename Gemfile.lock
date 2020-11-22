@@ -113,7 +113,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
     mimemagic (0.3.5)
-    mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
@@ -281,7 +280,6 @@ DEPENDENCIES
   cloudinary
   file_validators
   jbuilder (~> 2.7)
-  mini_magick
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)

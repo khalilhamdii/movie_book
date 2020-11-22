@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  require 'mini_magick'
 
   def index
     redirect_to login_path unless logged_in?
