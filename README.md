@@ -20,7 +20,7 @@
 
 ## Live Demo
 
-[Heroku link](https://pacific-taiga-39421.herokuapp.com/)
+[Heroku link](https://serene-wave-21474.herokuapp.com/)
 
 ## Screenshots
 
