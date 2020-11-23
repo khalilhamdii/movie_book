@@ -1,0 +1,15 @@
+<h3 class="text-warning mb-5 font-weight-bold">Create a new article</h3>
+<%= simple_form_for Article.new , :html => {:class => "mb-5 brown lighten-5 p-4"} do |f| %>
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li class="errors"><%= error %></li>
+    <% end %>
+  </ul>
+  <%= f.error_notification %>
+  <%= f.input :title, label: "Movie title :", placeholder: "Add title here..." %>
+  <%= f.input :category_list, collection: ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Sci-Fi', 'Sport', 'Super hero', 'Thriller', 'War', 'Western'], input_html: { multiple: true }, label: "Movie categories :", placeholder: "Add categories here separated by a space or a comma...", include_hidden: false %>
+  <%= f.input :description, label: "Movie summary :", placeholder: "Add summary here..." %>
+  <%= f.label "Add an image to your summary"%>
+  <%= f.file_field :image, direct_upload: true %> <br>
+  <%= f.button :submit, class: "btn btn-block rounded-pill z-depth-1 mt-4 btn-amber" %>
+<% end %>

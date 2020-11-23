@@ -1,0 +1,18 @@
+development:
+  cloud_name: khalilhamdi
+  api_key: "638772484253855"
+  api_secret: DjO-f6OfLXetep-3nt3I3GXPwso
+  enhance_image_tag: true
+  static_file_support: true
+production:
+  cloud_name: khalilhamdi
+  api_key: "638772484253855"
+  api_secret: DjO-f6OfLXetep-3nt3I3GXPwso
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: khalilhamdi
+  api_key: "638772484253855"
+  api_secret: DjO-f6OfLXetep-3nt3I3GXPwso
+  enhance_image_tag: true
+  static_file_support: false

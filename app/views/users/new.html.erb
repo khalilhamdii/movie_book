@@ -1,0 +1,15 @@
+	<%= notice_bar %>
+<!--main-section-->
+<main class="container mt-4">
+  <!-- sign up form-->
+  <div class="card w-50 m-auto">
+    <h3 class="card-header  amber accent-3 white-text text-center py-4">
+      <strong >Sign Up</strong>
+    </h3>
+    <div class="card-body brown lighten-5 px-lg-5">
+      <%= render "form" , user: @user %>
+      <button type="button" onclick="location.href = 'login';" class="btn btn-amber btn-block rounded-pill z-depth-1  mb-3" >Login</button>
+      <button type="button" onclick="location.href = 'home';" class="btn btn-warning btn-block rounded-pill z-depth-1 mb-3" >Home page</button>
+    </div>
+  </div>
+</main>

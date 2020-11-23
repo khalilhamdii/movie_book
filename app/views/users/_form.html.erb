@@ -1,0 +1,26 @@
+<%= form_for @user, :validate => true do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li class="errors"><%= error %></li>
+    <% end %>
+  </ul>
+  <div class="input-field mb-3">
+    <div class="labels">
+      <label>Name :</label>
+    </div>
+    <div><%= f.text_field :name, :placeholder =>  'Please enter your name', :class => "form-control" %></div>
+  </div>
+  <div class="input-field mb-3">
+    <div class="labels">
+      <label>Email :</label>
+    </div>
+    <div><%= f.email_field :email, :placeholder =>  'Please enter your email',:class => "form-control" %></div>
+  </div>
+  <div class="input-field mb-3">
+    <div class="labels">
+      <label>Add an avatar :</label>
+    </div>
+    <div><%= f.file_field :avatar, direct_upload: true %></div>
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-block btn-brown rounded-pill z-depth-1 mt-5 mb-3" %>
+<% end %>

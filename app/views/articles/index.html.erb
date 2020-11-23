@@ -1,0 +1,28 @@
+<%= notice_bar %>
+<div class="p-2">
+  <div class="row no-gutters flex-wrap">
+    <% @articles.each do |article| %>
+      <div class="card card-image col-lg-6 row-sm article ">
+        <div class="background-pattern"></div>
+        <div class="d-flex h-100">
+          <div class="card card-image bg-img w-50" 
+  style="background-image: url(<%= (url_for(article.image))%>);"></div>
+          <!-- Content -->
+          <div class="text-dark text-left d-flex flex-column w-50 p-3 high-z">
+            <div class="d-flex flex-wrap">
+              <% article.categories.each do |category| %>
+                <%= link_to category.name, category, class: "custom-orange-text font-weight-bold thick-border-bottom mr-3" %>
+              <% end %>
+            </div>
+            <h4 class="card-title pt-2"><strong><%= link_to "#{article.title}", article, class: "brown-text" %></strong></h4>
+            <p class="d-inline-block art-content-summary"><%= article.description %></p>
+            <%= link_to "Read More", article, class: "custom-orange-text  font-weight-bold"%>
+            <div class="mt-auto ">
+              <%= number_of_votes(article) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

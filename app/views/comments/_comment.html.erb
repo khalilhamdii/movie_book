@@ -1,0 +1,4 @@
+ <%= form_for(@article.comments.new, url: article_comments_path(@article)) do |f| %>
+  <%= f.text_field :content, size: 30, id: :comment_content, class: 'brown lighten-5 shadow-sm comment-input mb-2 border-0 rounded-pill p-3 w-75', placeholder: 'Add new Comment' %>
+  <%= f.submit 'Comment', class: 'btn btn-amber rounded-pill ml-4' %>
+<% end %>

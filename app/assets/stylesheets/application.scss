@@ -1,0 +1,44 @@
+body {
+  min-width: 450px;
+}
+
+/* Errors */
+
+.errors {
+  color: red;
+  text-align: left;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(330deg, #f80 0%, #ff744e 100%);
+  background-image: linear-gradient(120deg, #ff6a41 0%, #f80 100%);
+}
+
+.avatar-img {
+  height: 30px;
+  width: 30px;
+}
+
+.background-color {
+  background-color: #4e433c;
+}
+
+footer {
+  -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-scroll {
+  height: 300px;
+  overflow-y: scroll;
+}
