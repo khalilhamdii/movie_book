@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:invalid_user) { User.new(name: 'kh', email: 'kh@mail.com') }
+
+  it 'checks if user name with 2 letters is not valid' do
+    expect(invalid_user).not_to be_valid
+  end
+
   it 'checks if name is present' do
     should validate_presence_of(:name)
   end

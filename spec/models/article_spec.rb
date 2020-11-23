@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
+  let(:invalid_article) { Article.new(title: 'ti', description: 'some article content') }
+
+  it 'checks if article title with 2 letters is not valid' do
+    expect(invalid_article).not_to be_valid
+  end
+
   it 'checks if title is present' do
     should validate_presence_of(:title)
   end
