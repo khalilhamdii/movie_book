@@ -24,7 +24,7 @@
 
 ## Screenshots
 
-![img](/app/assets/images/main-sc.png)
+![img](/app/assets/images/main.png)
 
 ## Built With 🛠
 
