@@ -4,7 +4,7 @@
 
 ## Description
 
-> MovieBook is a movies blog where users can write reviews or summaries about their favorite movies. This web application allows users to sign up using the name, email, and avatar. Every logged-in user can create a new article. He has the ability to either vote or comment on other user's articles.
+> MovieBook is a movies blog where users can write reviews or summaries about their favorite movies. This web application allows users to sign up using a name, email, and an avatar. Every logged-in user can create a new article. He can either vote or comment on articles created by other users. MovieBook was built using Ruby On Rails, PostgreSQL, and Bootstrap.
 
 ## Library Directory 📙
 
